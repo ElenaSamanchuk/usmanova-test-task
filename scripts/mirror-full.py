@@ -36,9 +36,10 @@ def absolutize(html: str) -> str:
     html = re.sub(r'url\("/fileservice/', f'url("{BASE}/fileservice/', html)
     html = re.sub(r"url\('//", "url('https://", html)
     html = re.sub(r'url\("//', 'url("https://', html)
-    html = re.sub(r"//fs-thb", "https://fs-thb", html)
-    html = re.sub(r"//fs\.getcourse", "https://fs.getcourse", html)
+    html = re.sub(r'(\scontent)="//', r'\1="https://', html)
     html = re.sub(r'data-img-src="//', 'data-img-src="https://', html)
+    html = re.sub(r'data-src="//', 'data-src="https://', html)
+    html = re.sub(r"https?:https?://", "https://", html, flags=re.I)
     return html
 
 
@@ -70,6 +71,7 @@ def main() -> None:
     html = cleanup(absolutize(fetch_source()))
     OUT.write_text(html, encoding="utf-8")
     print(f"Mirrored {OUT} ({OUT.stat().st_size} bytes)")
+    print("Run: python3 scripts/localize-images.py")
 
 
 if __name__ == "__main__":
