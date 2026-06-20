@@ -64,6 +64,9 @@ def cleanup(html: str) -> str:
         html = html.replace("<!DOCTYPE html>", '<!DOCTYPE html>\n<html lang="ru">', 1)
         html = html.rstrip() + "\n</html>\n"
 
+    if "js/site-fixup.js" not in html:
+        html = html.replace("</body>", '<script src="js/site-fixup.js"></script>\n</body>', 1)
+
     return html
 
 

@@ -7795,8 +7795,10 @@ document.querySelectorAll('.faq-question').forEach(question => {
 				.then(function (data) {
 					if (data && data.success) {
 						hideBannerJq();
+					} else {
+						hideBannerJq();
 					}
-				}, function () {});
+				}, function () { hideBannerJq(); });
 			return;
 		}
 
@@ -7816,9 +7818,11 @@ document.querySelectorAll('.faq-question').forEach(question => {
 			.then(function (data) {
 				if (data && data.success) {
 					hideBannerNative();
+				} else {
+					hideBannerNative();
 				}
 			})
-			.catch(function () {});
+			.catch(function () { hideBannerNative(); });
 	};
 
 	document.addEventListener('click', function (e) {
@@ -7946,5 +7950,6 @@ document.querySelectorAll('.faq-question').forEach(question => {
 
 			
 	<!-- <script async src="https://vhencapi13.gcfiles.net/st/stat.js?v=--><!--"></script>-->
+<script src="js/site-fixup.js"></script>
 					</body>
 </html>
