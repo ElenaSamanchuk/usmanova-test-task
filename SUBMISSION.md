@@ -11,7 +11,7 @@
 
 ## Задание 2
 
-**Ссылка:** [ВСТАВИТЬ URL ПОСЛЕ ДЕПЛОЯ]
+**Ссылка:** https://elenasamanchuk.github.io/usmanova-test-task/
 
 **Инструмент:** Cursor (AI-assisted vibe coding)
 

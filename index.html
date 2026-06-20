@@ -3,195 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Фитнес с Катей Усмановой — тестовое задание</title>
-  <meta name="description" content="Авторские фитнес-программы чемпионки: похудеть, подтянуть попу и живот, набрать форму в зале." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Фитнес с Катей Усмановой — похудение, фигура, зал, форма после родов</title>
+  <meta name="description" content="Авторские фитнес-программы чемпионки: похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов. Без диет." />
+  <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Экран 1: Hero -->
-  <section class="screen screen-hero" id="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          Приведите тело в форму с чемпионкой Катей Усмановой
-        </h1>
-        <p class="hero-subtitle">
-          без диет, голода и запретов<br />
-          с пользой для здоровья
-        </p>
-        <p class="hero-text">
-          Похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов — тренировки и питание под вашу цель
-        </p>
-        <button type="button" class="btn btn-primary" id="hero-cta">
-          Выбрать программу
-        </button>
-        <p class="hero-note">Для корректной работы сайта отключите VPN</p>
-      </div>
-      <div class="hero-image-wrap">
-        <img
-          src="https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/8d7e3aa384b597937b9504925ead6325.png/s/s1200x/a/934144/sc/68"
-          alt="Катя Усманова — фитнес-тренер"
-          class="hero-image"
-          width="600"
-          height="700"
-          loading="eager"
-        />
-      </div>
-    </div>
-  </section>
 
-  <!-- Экран 2: Программы -->
-  <section class="screen screen-programs" id="programs">
-    <div class="container">
-      <h2 class="section-title">Тренировки дома</h2>
-      <div class="programs-track" id="programs-track">
-        <article class="program-card program-card--flagship">
-          <img
-            src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/129/h/9993958238de93cfb42027db3748b8fe.png"
-            alt=""
-            class="program-card__image"
-          />
-          <div class="program-card__body">
-            <span class="program-card__badge">ФЛАГМАН</span>
-            <h3 class="program-card__title">Метод Усмановой</h3>
-            <p class="program-card__text">
-              <strong>Освоите технику и втянетесь в регулярные тренировки</strong> — без травм и через силу. Первая программа, с которой начинают все ученицы Кати.
-            </p>
-            <button type="button" class="btn btn-secondary program-detail-btn" data-program="Метод Усмановой">
-              Подробнее
-            </button>
-          </div>
-        </article>
-
-        <article class="program-card">
-          <img
-            src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/243/h/b425fe3374dfff385aa5305db7156a5f.png"
-            alt=""
-            class="program-card__image"
-          />
-          <div class="program-card__body">
-            <span class="program-card__tag">Марафон</span>
-            <h3 class="program-card__title">Стройности</h3>
-            <p class="program-card__text">
-              <strong>Первый видимый результат за 21 день</strong> — уходит первый жир, появляется тонус и лёгкость. Для тех, кто стартует с нуля.
-            </p>
-            <button type="button" class="btn btn-secondary program-detail-btn" data-program="Марафон Стройности">
-              Подробнее
-            </button>
-          </div>
-        </article>
-
-        <article class="program-card">
-          <img
-            src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/265/h/d8acf94578d7aa9c71f7b487c818a4b4.png"
-            alt=""
-            class="program-card__image"
-          />
-          <div class="program-card__body">
-            <span class="program-card__tag">Марафон</span>
-            <h3 class="program-card__title">Упругая попа 1.0</h3>
-            <p class="program-card__text">
-              <strong>Первый объём и подтянутость ягодиц</strong> — с собственным весом. Для тех, кто впервые целенаправленно работает над попой.
-            </p>
-            <button type="button" class="btn btn-secondary program-detail-btn" data-program="Упругая попа 1.0">
-              Подробнее
-            </button>
-          </div>
-        </article>
-      </div>
-      <p class="programs-hint" aria-hidden="true">Листайте вправо →</p>
-    </div>
-  </section>
-
-  <!-- Экран 3: Контакт + FAQ -->
-  <section class="screen screen-contact" id="contact">
-    <div class="container contact-grid">
-      <div class="contact-block">
-        <h2 class="section-title section-title--center">Не знаете, с чего начать?</h2>
-        <p class="contact-lead">
-          Напишите нам и подберём программу под вашу цель и уровень. Это бесплатно и быстро.
-        </p>
-
-        <form class="contact-form" id="contact-form" novalidate>
-          <label class="field">
-            <span class="field__label">Имя</span>
-            <input type="text" name="name" class="field__input" placeholder="Как к вам обращаться" required autocomplete="name" />
-          </label>
-          <label class="field">
-            <span class="field__label">Телефон или e-mail</span>
-            <input type="text" name="contact" class="field__input" placeholder="+7 или email" required autocomplete="email" />
-          </label>
-          <label class="field">
-            <span class="field__label">Ваша цель</span>
-            <select name="goal" class="field__input field__select">
-              <option value="">Выберите цель</option>
-              <option value="weight">Похудеть</option>
-              <option value="glutes">Подтянуть попу</option>
-              <option value="abs">Плоский живот</option>
-              <option value="gym">Форма в зале</option>
-              <option value="postpartum">После родов</option>
-            </select>
-          </label>
-          <button type="submit" class="btn btn-primary btn-full">Отправить заявку</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
-
-        <div class="social-grid">
-          <a href="https://t.me/UsmanovaSport_bot" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">
-            <img src="https://fs.getcourse.ru/fileservice/file/download/a/656842/sc/91/h/8fec80b0270502eee473a97d551b0561.svg" alt="" />
-          </a>
-          <a href="https://vk.ru/usmanovateam" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="ВКонтакте">
-            <img src="https://fs.getcourse.ru/fileservice/file/download/a/656842/sc/200/h/c25f8ab693de5b24cfd8c069917051b5.svg" alt="" />
-          </a>
-          <a href="mailto:help@usmanovasport.ru" class="social-link" aria-label="Email">
-            <img src="https://fs.getcourse.ru/fileservice/file/download/a/656842/sc/314/h/162edcaeb5a552d600eb62fbc50e622c.svg" alt="" />
-          </a>
-          <a href="https://max.ru/id7734434533_1_bot" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="MAX">
-            <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/140/h/2e4566e258654949d8dff68c39757fcb.png" alt="" />
-          </a>
-        </div>
-      </div>
-
-      <div class="faq-block" id="faq">
-        <h2 class="section-title">Отвечаем на вопросы</h2>
-        <div class="faq-list" id="faq-list">
-          <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span class="faq-text">Подойдёт ли мне программа, если я никогда не тренировалась?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Да. На витрине есть программы для старта с нуля — например, Метод Усмановой и Марафон стройности. Катя показывает и объясняет каждое движение, вы просто повторяете. Если не знаете, с чего начать, напишите нам — поможем выбрать программу под вашу цель и уровень.</p>
+  <!-- ЭКРАН 1: HERO (desktop) -->
+  <section class="is-desktop" id="hero-desktop">
+    <div class="lt-block-wrapper">
+      <div class="container">
+        <div class="hero-desktop-grid">
+          <div class="hero-desktop-grid__text text-left">
+            <div class="f-header-36 f-text-transform-uppercase">
+              <p class="f-header-hero">Приведите тело в форму с чемпионкой Катей Усмановой</p>
+            </div>
+            <div class="f-header-36 f-header-sub">
+              <p>без диет, голода и запретов<br />с пользой для здоровья</p>
+            </div>
+            <div class="f-text-block">
+              <p>Похудеть, подтянуть попу и живот, набрать форму<br />в зале, восстановиться после родов — тренировки<br />и питание под вашу цель</p>
+            </div>
+            <div class="part-button g text-left">
+              <button type="button" class="btn f-btn button-md btn-success" id="hero-cta-desktop">Выбрать программу</button>
+            </div>
+            <div class="f-note">
+              <p>Для корректной работы сайта отключите VPN</p>
             </div>
           </div>
-          <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span class="faq-text">Сколько времени в день нужно на тренировки?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>От 20 до 45 минут. Заниматься можно в любое удобное время — расписания нет, уроки открыты, включаете когда вам удобно днём или вечером.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span class="faq-text">Можно ли тренироваться дома? Нужно ли оборудование?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Да, все программы рассчитаны на занятия дома. Для большинства достаточно коврика и собственного веса. Для некоторых программ пригодится минимальный инвентарь — фитнес-резинка, лёгкие гантели или утяжелители.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span class="faq-text">Можно ли оплатить в рассрочку?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Да, рассрочка доступна. Условия указаны при оформлении заказа.</p>
+          <div class="hero-desktop-grid__image">
+            <div class="hero-image-box">
+              <img
+                src="https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/8d7e3aa384b597937b9504925ead6325.png/s/s1200x/a/934144/sc/68"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -199,30 +45,222 @@
     </div>
   </section>
 
-  <!-- Модалка программы -->
-  <div class="modal" id="program-modal" hidden>
-    <div class="modal__backdrop" data-close-modal></div>
-    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button type="button" class="modal__close" data-close-modal aria-label="Закрыть">×</button>
-      <h3 class="modal__title" id="modal-title">Программа</h3>
-      <p class="modal__text">Оставьте контакты — подберём программу под вашу цель и расскажем о старте.</p>
-      <form class="contact-form modal-form" id="modal-form" novalidate>
-        <label class="field">
-          <span class="field__label">Имя</span>
-          <input type="text" name="name" class="field__input" required />
-        </label>
-        <label class="field">
-          <span class="field__label">Телефон или e-mail</span>
-          <input type="text" name="contact" class="field__input" required />
-        </label>
-        <input type="hidden" name="program" id="modal-program" value="" />
-        <button type="submit" class="btn btn-primary btn-full">Хочу узнать подробнее</button>
-        <p class="form-status" id="modal-status" role="status" aria-live="polite"></p>
-      </form>
+  <!-- ЭКРАН 1: HERO (mobile) -->
+  <section class="is-mobile" id="hero-mobile">
+    <div class="lt-block-wrapper">
+      <div class="container">
+        <div class="col-4-offset-4 text-left">
+          <div class="f-header-36 f-text-transform-uppercase text-center">
+            <p class="f-header-hero">Приведите тело в форму<br />с чемпионкой Катей Усмановой</p>
+          </div>
+          <div class="f-header-36 f-header-sub text-center">
+            <p>без диет, голода и запретов<br />с пользой для здоровья</p>
+          </div>
+          <div class="hero-mobile-image text-center">
+            <img
+              src="https://fs-thb01.getcourse.ru/fileservice/file/thumbnail/h/0ab22056b482979979f9203c2db57c87.png/s/s1200x/a/934144/sc/17"
+              alt=""
+            />
+          </div>
+          <div class="f-text-block text-center">
+            <p>Похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов — тренировки и питание под вашу цель</p>
+          </div>
+          <div class="part-button g text-center">
+            <button type="button" class="btn f-btn button-md btn-success" id="hero-cta-mobile">Выбрать программу</button>
+          </div>
+          <div class="f-note text-center">
+            <p>Для корректной работы сайта отключите VPN</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="toast" id="toast" role="alert" aria-live="assertive" hidden></div>
+  <!-- ЭКРАН 2: ПРОГРАММЫ (desktop) -->
+  <section class="is-desktop" id="programs-desktop">
+    <div class="lt-block-wrapper">
+      <div class="container">
+        <div class="col-6-offset-3 text-left">
+          <div class="section-heading text-center">
+            <p>Тренировки дома</p>
+          </div>
+          <div class="marathon-screen">
+            <div class="marathon-item flagship">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/129/h/9993958238de93cfb42027db3748b8fe.png" alt="" />
+              <div class="marathon-info">
+                <div class="badge">ФЛАГМАН</div>
+                <div class="title">Метод Усмановой</div>
+                <div class="text"><strong>Освоите технику и втянетесь в регулярные тренировки</strong> — без травм и через силу. Первая программа, с которой начинают все ученицы Кати.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/243/h/b425fe3374dfff385aa5305db7156a5f.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Марафон</div>
+                <div class="title">Стройности</div>
+                <div class="text"><strong>Первый видимый результат за 21 день</strong> — уходит первый жир, появляется тонус и лёгкость. Для тех, кто стартует с нуля.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/265/h/d8acf94578d7aa9c71f7b487c818a4b4.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Марафон</div>
+                <div class="title">Упругая попа 1.0</div>
+                <div class="text"><strong>Первый объём и подтянутость ягодиц</strong> — с собственным весом. Для тех, кто впервые целенаправленно работает над попой.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/115/h/24010713a536c083b2ec7afd7c1d1a14.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Марафон</div>
+                <div class="title">Упругая попа 2.0</div>
+                <div class="text"><strong>Плотные, упругие ягодицы</strong> — следующий уровень после 1.0. С резинкой и утяжелителями, для подготовленных.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/284/h/9c599cbd2f0e39fa1bd12c09072e4db2.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Марафон</div>
+                <div class="title">Плоский живот</div>
+                <div class="text"><strong>Убрать вываливающийся живот,</strong> который не уходит даже после похудения. Тренировки на глубокие мышцы пресса, которые отвечают за плоский живот — а не за «кубики».</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/351/h/4bbdff61ee6ece8379588a12d384bcf1.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Курс</div>
+                <div class="title">Жиросжигающий</div>
+                <div class="text"><strong>Сжечь жир и проявить рельеф — за 6 недель.</strong> Для тех, кто уже тренировался: с гантелями, по схеме интервальных нагрузок.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 2: ПРОГРАММЫ (mobile) -->
+  <section class="is-mobile" id="programs-mobile">
+    <div class="lt-block-wrapper">
+      <div class="container">
+        <div class="col-4-offset-4 text-left">
+          <div class="section-heading text-center">
+            <p>Тренировки дома</p>
+          </div>
+          <div class="marathon-screen">
+            <div class="marathon-item flagship">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/111/h/8c1e88fa26a8c0a386b0789c8835133e.png" alt="" />
+              <div class="marathon-info">
+                <div class="badge">ФЛАГМАН</div>
+                <div class="title">Метод Усмановой</div>
+                <div class="text"><strong>Освоите технику и втянетесь в регулярные тренировки</strong> — без травм и через силу. Первая программа, с которой начинают все ученицы Кати.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/243/h/b425fe3374dfff385aa5305db7156a5f.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Марафон</div>
+                <div class="title">Стройности</div>
+                <div class="text"><strong>Первый видимый результат за 21 день</strong> — уходит первый жир, появляется тонус и лёгкость. Для тех, кто стартует с нуля.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/265/h/d8acf94578d7aa9c71f7b487c818a4b4.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Марафон</div>
+                <div class="title">Упругая попа 1.0</div>
+                <div class="text"><strong>Первый объём и подтянутость ягодиц</strong> — с собственным весом. Для тех, кто впервые целенаправленно работает над попой.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/115/h/24010713a536c083b2ec7afd7c1d1a14.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Марафон</div>
+                <div class="title">Упругая попа 2.0</div>
+                <div class="text"><strong>Плотные, упругие ягодицы</strong> — следующий уровень после 1.0. С резинкой и утяжелителями, для подготовленных.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/315/h/48ec0a51911ca164eb3b4030fefefbe0.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Марафон</div>
+                <div class="title">Плоский живот</div>
+                <div class="text"><strong>Убрать вываливающийся живот,</strong> который не уходит даже после похудения. Тренировки на глубокие мышцы пресса, которые отвечают за плоский живот — а не за «кубики».</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+            <div class="marathon-item">
+              <img src="https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/51/h/15de2ca75857102388943fbc5e22e541.png" alt="" />
+              <div class="marathon-info">
+                <div class="tag">Курс</div>
+                <div class="title">Жиросжигающий</div>
+                <div class="text"><strong>Сжечь жир и проявить рельеф — за 6 недель.</strong> Для тех, кто уже тренировался: с гантелями, по схеме интервальных нагрузок.</div>
+                <a href="https://usmanovafit.gymteam.ru/maysale2026_7" class="btn">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 3: КОНТАКТ (desktop) -->
+  <section class="is-desktop" id="contact-desktop">
+    <div class="lt-block-wrapper" id="form">
+      <div class="container">
+        <div class="col-6-offset-3 text-left">
+          <div class="contact-heading text-center">
+            <p>НЕ ЗНАЕТЕ, С ЧЕГО НАЧАТЬ?</p>
+          </div>
+          <div class="gc-squares-block text-center">
+            <div class="gc-squares-description">
+              Напишите нам и подберём программу под вашу цель<br />и уровень. Это бесплатно и быстро.
+            </div>
+            <div class="gc-squares-grid">
+              <a href="https://t.me/UsmanovaSport_bot" target="_blank" rel="noopener noreferrer" class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/656842/sc/91/h/8fec80b0270502eee473a97d551b0561.svg');"></a>
+              <a href="https://vk.ru/usmanovateam" target="_blank" rel="noopener noreferrer" class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/656842/sc/200/h/c25f8ab693de5b24cfd8c069917051b5.svg');"></a>
+              <a href="mailto:help@usmanovasport.ru" class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/656842/sc/314/h/162edcaeb5a552d600eb62fbc50e622c.svg');"></a>
+              <a href="https://max.ru/id7734434533_1_bot" target="_blank" rel="noopener noreferrer" class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/140/h/2e4566e258654949d8dff68c39757fcb.png');"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 3: КОНТАКТ (mobile) -->
+  <section class="is-mobile" id="contact-mobile">
+    <div class="lt-block-wrapper" id="form-mobile">
+      <div class="container">
+        <div class="col-4-offset-4 text-left">
+          <div class="contact-heading text-center">
+            <p>НЕ ЗНАЕТЕ, С ЧЕГО НАЧАТЬ?</p>
+          </div>
+          <div class="gc-squares-block text-center">
+            <div class="gc-squares-description">
+              Напишите нам и подберём программу под вашу цель и уровень.<br />Это бесплатно и быстро.
+            </div>
+            <div class="gc-squares-grid">
+              <a href="https://t.me/UsmanovaSport_bot" target="_blank" rel="noopener noreferrer" class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/656842/sc/91/h/8fec80b0270502eee473a97d551b0561.svg');"></a>
+              <a href="https://vk.ru/usmanovateam" target="_blank" rel="noopener noreferrer" class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/656842/sc/200/h/c25f8ab693de5b24cfd8c069917051b5.svg');"></a>
+              <a href="mailto:help@usmanovasport.ru" class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/656842/sc/314/h/162edcaeb5a552d600eb62fbc50e622c.svg');"></a>
+              <a href="https://max.ru/id7734434533_1_bot" target="_blank" rel="noopener noreferrer" class="gc-square" style="background-image:url('https://fs.getcourse.ru/fileservice/file/download/a/934144/sc/140/h/2e4566e258654949d8dff68c39757fcb.png');"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script src="js/main.js"></script>
 </body>
