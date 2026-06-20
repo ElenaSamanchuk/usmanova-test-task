@@ -118,3 +118,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    print("Run: python3 scripts/optimize-images.py")

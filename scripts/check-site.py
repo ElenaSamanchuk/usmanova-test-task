@@ -19,8 +19,11 @@ def main() -> int:
         if not (ROOT / ref).exists():
             errors.append(f"Missing image: {ref}")
 
-    if re.search(r"https://fs[^\"'\s]+\.(png|jpg|svg)", html):
+    if re.search(r"https://fs[^\"'\s]+\.(png|jpg|svg|webp)", html):
         errors.append("External image URLs still present")
+
+    if not re.search(r"assets/images/.*\.webp", html):
+        errors.append("WebP images not referenced")
 
     if "js/site-fixup.js" not in html:
         errors.append("site-fixup.js not included")
