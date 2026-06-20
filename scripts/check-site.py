@@ -9,6 +9,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 HTML = ROOT / "index.html"
+FORM_DESKTOP = "ltBlock2235774933"
+FORM_MOBILE = "ltBlock2235774935"
+FORM_BUTTON_IDS = ("button5772404", "button4154228", "button2930836")
 
 
 def main() -> int:
@@ -36,6 +39,17 @@ def main() -> int:
 
     if "UsmanovaSport_bot" not in html:
         errors.append("Telegram link missing")
+
+    if FORM_DESKTOP not in html or FORM_MOBILE not in html:
+        errors.append("Contact form blocks missing")
+
+    fixup = (ROOT / "js/site-fixup.js").read_text(encoding="utf-8", errors="replace")
+    for button_id in FORM_BUTTON_IDS:
+        if button_id not in fixup:
+            errors.append(f"Form scroll handler missing for {button_id}")
+
+    if "ltBlock2235774933" not in fixup or "ltBlock2235774935" not in fixup:
+        errors.append("Responsive form anchor logic missing in site-fixup.js")
 
     if "class=\"btn\">Подробнее" not in html and "class='btn'>Подробнее" not in html:
         errors.append("Program detail buttons missing")

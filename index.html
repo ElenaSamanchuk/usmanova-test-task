@@ -7524,26 +7524,7 @@ strong {
   margin: 0;
   text-align: left;
 }
-</style>
-
-<script>
-document.querySelectorAll('.faq-question').forEach(question => {
-  question.addEventListener('click', () => {
-    const item = question.closest('.faq-item');
-    const isActive = item.classList.contains('active');
-
-    document.querySelectorAll('.faq-item').forEach(i => {
-      i.classList.remove('active');
-      i.querySelector('.faq-icon').textContent = '+';
-    });
-
-    if (!isActive) {
-      item.classList.add('active');
-      item.querySelector('.faq-icon').textContent = '×';
-    }
-  });
-});
-</script></div>	<div class="add-redesign-subblock" data-id="2235885137">
+</style></div>	<div class="add-redesign-subblock" data-id="2235885137">
 		<span class="fa fa-plus"></span>
 	</div>
 </div>

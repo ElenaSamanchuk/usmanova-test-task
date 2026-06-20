@@ -2,6 +2,14 @@
   "use strict";
 
   const COOKIE_KEY = "usmanova_cookies_accepted";
+  const FORM_DESKTOP_ID = "ltBlock2235774933";
+  const FORM_MOBILE_ID = "ltBlock2235774935";
+  const MOBILE_QUERY = "(max-width: 1020px)";
+  const SCROLL_TO_FORM_BUTTON_IDS = new Set([
+    "button5772404",
+    "button4154228",
+    "button2930836",
+  ]);
 
   function hideCookieBanner() {
     document.querySelectorAll(".cookies-notification").forEach((banner) => {
@@ -11,14 +19,43 @@
     });
   }
 
+  function isMobileViewport() {
+    return window.matchMedia(MOBILE_QUERY).matches;
+  }
+
+  function getFormBlock() {
+    const desktop = document.getElementById(FORM_DESKTOP_ID);
+    const mobile = document.getElementById(FORM_MOBILE_ID);
+    return isMobileViewport() ? mobile || desktop : desktop || mobile;
+  }
+
+  function getFormTarget() {
+    const block = getFormBlock();
+    if (!block) return null;
+    return block.querySelector(".lt-block-wrapper") || block;
+  }
+
+  function clearFormAnchors() {
+    document.querySelectorAll("#form").forEach((node) => node.removeAttribute("id"));
+  }
+
   function ensureFormAnchor() {
-    if (document.getElementById("form")) return;
-    const contact =
-      document.getElementById("ltBlock2235774933") ||
-      document.getElementById("ltBlock2235774935");
-    if (!contact) return;
-    const anchor = contact.querySelector(".lt-block-wrapper") || contact;
-    anchor.id = "form";
+    clearFormAnchors();
+    const target = getFormTarget();
+    if (target) target.id = "form";
+    return target;
+  }
+
+  function scrollToForm() {
+    const target = ensureFormAnchor();
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, "", "#form");
+    } else {
+      window.location.hash = "form";
+    }
   }
 
   function hydrateLazyImages() {
@@ -49,29 +86,74 @@
     });
   }
 
+  let faqBound = false;
+
   function bindFaq() {
+    if (faqBound) return;
+    faqBound = true;
+
     document.querySelectorAll(".faq-question").forEach((question) => {
-      if (question.dataset.faqBound) return;
-      question.dataset.faqBound = "1";
       question.style.cursor = "pointer";
-      question.addEventListener("click", () => {
-        const item = question.closest(".faq-item");
-        if (!item) return;
-        const isActive = item.classList.contains("active");
-
-        document.querySelectorAll(".faq-item").forEach((node) => {
-          node.classList.remove("active");
-          const icon = node.querySelector(".faq-icon");
-          if (icon) icon.textContent = "+";
-        });
-
-        if (!isActive) {
-          item.classList.add("active");
-          const icon = item.querySelector(".faq-icon");
-          if (icon) icon.textContent = "×";
-        }
-      });
     });
+
+    document.addEventListener("click", (event) => {
+      const question = event.target.closest(".faq-question");
+      if (!question) return;
+
+      const item = question.closest(".faq-item");
+      if (!item) return;
+
+      const isActive = item.classList.contains("active");
+
+      document.querySelectorAll(".faq-item").forEach((node) => {
+        node.classList.remove("active");
+        const icon = node.querySelector(".faq-icon");
+        if (icon) icon.textContent = "+";
+      });
+
+      if (!isActive) {
+        item.classList.add("active");
+        const icon = item.querySelector(".faq-icon");
+        if (icon) icon.textContent = "×";
+      }
+    });
+  }
+
+  let scrollToFormBound = false;
+
+  function bindScrollToFormButtons() {
+    if (scrollToFormBound) return;
+    scrollToFormBound = true;
+
+    document.addEventListener(
+      "click",
+      (event) => {
+        const button = event.target.closest("button");
+        if (!button || !SCROLL_TO_FORM_BUTTON_IDS.has(button.id)) return;
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        scrollToForm();
+      },
+      true
+    );
+  }
+
+  function bindFormAnchorOnResize() {
+    let resizeTimer = 0;
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(ensureFormAnchor, 150);
+    });
+
+    if (window.matchMedia) {
+      const mq = window.matchMedia(MOBILE_QUERY);
+      if (typeof mq.addEventListener === "function") {
+        mq.addEventListener("change", ensureFormAnchor);
+      } else if (typeof mq.addListener === "function") {
+        mq.addListener(ensureFormAnchor);
+      }
+    }
   }
 
   function bindCookieButton() {
@@ -92,12 +174,18 @@
 
   function init() {
     ensureFormAnchor();
+    bindFormAnchorOnResize();
     hydrateLazyImages();
     bindFaq();
+    bindScrollToFormButtons();
     bindCookieButton();
 
     if (localStorage.getItem(COOKIE_KEY)) {
       hideCookieBanner();
+    }
+
+    if (window.location.hash === "#form") {
+      window.setTimeout(scrollToForm, 100);
     }
   }
 
